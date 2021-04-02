@@ -3,7 +3,7 @@
 
 ### What is the site's agenda?
 
-waze.com markets itself as a resource for the community of drivers to help navigate and report on current traffic conditions. 
+[waze.com](https://www.waze.com/live-map) markets itself as a resource for the community of drivers to help navigate and report on current traffic conditions. 
 
 <img width="1280" alt="Screen Shot 2021-04-02 at 3 32 11 PM" src="https://user-images.githubusercontent.com/59623146/113458953-ecc4e100-93c8-11eb-9aa4-72870e7edbd5.png">
 
