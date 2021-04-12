@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Hello World</title>
+	<title>Lynn's Favorite Spots at UCLA</title>
 	<meta charset="utf-8" />
 
 	<!-- style sheets -->
@@ -13,28 +13,72 @@
 
 </head>
 <body>
-
 	<div class="header">
-		Hello World
+		LYNN'S FAVORITE SPOTS AT UCLA
 	</div>
+
 	<div class="sidebar">
-		My Sidebar
+		<b>Introduction</b><br>
+		Since I am graduating this year, I have a lot of fond memories of the places on campus that have given me joy. Here are a few of them!
+		<br><br>
+		<b>Favorite Spots</b><br>
+		1. Janss Steps <br>
+		2. Royce Hall<br>
+		3. BruinWalk<br>
+		4. John Wooden<br>
+		5. Rendevous<br>
+	</div>
+	
 	</div>
 	<div class="content">
 		<div id="map"></div>
 	</div>
 
     <script>
-        var map = L.map('map').setView([33.8669589,-118.1036573,], 13);
+        var map = L.map('map').setView([34.073127516258694, -118.44690850943654,], 16);
 
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 	    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
-
-        var marker = L.marker([33.8669589,-118.1036573]).addTo(map)
-		.bindPopup('The Technology Sandbox<br> Where Yoh is sitting this very moment')
-		.openPopup();	
-    </script>
-
+		
+		let data = [
+	{
+		'title':'1. Janss Steps',
+		'lat': 34.072038,
+		'lon': -118.443152,
+		'des': 'Great for naps'
+	},
+	{
+		'title':'2. Royce Hall',
+		'lat': 34.0729060754462,
+		'lon':  -118.44215374487563,
+		'des': 'A UCLA classic, great during sunsets'
+	},
+	{
+		'title':'3. BruinWalk',
+		'lat': 34.070964,
+		'lon': -118.444235,
+		'des': 'Best dog/people watch spot'
+	},
+	{
+		'title':'4. John Wooden Center',
+		'lat': 34.071279744884514, 
+		'lon': -118.44569962517272,
+		'des': 'Where to practice martial arts at UCLA'
+	},
+	{
+		'title':'5. Rendevous',
+		'lat': 34.07274610988398, 
+		'lon': -118.45172923104543,
+		'des': 'Take-out food galore!'
+	}
+	]	
+	
+	data.forEach(function(item){
+		L.marker([item.lat,item.lon]).addTo(map)
+				.bindPopup(item.title.bold() + '<br>' + item.des, {autoClose:false})
+				.openPopup();
+			});
+	</script>
 </body>
 </html>
