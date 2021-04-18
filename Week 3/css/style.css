@@ -1,0 +1,50 @@
+body,html {
+	margin:0px;
+	height:100%;
+	width:100%;
+	font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	font-size: 100%;
+}
+
+#map {
+	height: 100%;
+}
+
+body {
+	display: grid;
+	grid-template-rows: 60px 1fr;
+	grid-template-columns: 25% 75%; /* change to 50/50 split */
+	grid-template-areas: 
+	"header header"
+	"sidebar content"; /* swapped places */
+}
+
+
+.header {
+	grid-area: header;
+	padding:10px;
+    background-color: #2F3020;
+    color: #FFFFFF;
+	font-size: 2em;
+	font-family: "Garamond", serif;
+}
+.sidebar {
+	grid-area: sidebar;
+	padding:10px;
+    background-color: #596235;
+    color: #FFFFFF;
+	font-size: 1.2em;
+	overflow: auto; /* allows the sidebar to overflow with a scrollbar */
+
+}
+.content {
+	grid-area: content;
+}
+
+.sidebar-item {
+    padding: 10px; /* adds inner padding */
+    background:#2F3020; /* background color */
+    border: 1px solid gray; /* border width, style, and color */
+    margin: 5px; /* outer padding */
+	cursor: pointer; /* change cursor to hand on hover */
+}
