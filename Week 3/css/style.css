@@ -13,10 +13,10 @@ body,html {
 body {
 	display: grid;
 	grid-template-rows: 60px 1fr;
-	grid-template-columns: 25% 75%; /* change to 50/50 split */
+	grid-template-columns: 75% 25%; /* change to 50/50 split */
 	grid-template-areas: 
-	"header header"
-	"sidebar content"; /* swapped places */
+	"header sidebar"
+	"content sidebar"; /* swapped places */
 }
 
 
@@ -31,9 +31,10 @@ body {
 .sidebar {
 	grid-area: sidebar;
 	padding:10px;
+	padding-top: 20px;
     background-color: #596235;
     color: #FFFFFF;
-	font-size: 1.2em;
+	font-size: 1.5em;
 	overflow: auto; /* allows the sidebar to overflow with a scrollbar */
 
 }
@@ -44,7 +45,22 @@ body {
 .sidebar-item {
     padding: 10px; /* adds inner padding */
     background:#2F3020; /* background color */
-    border: 1px solid gray; /* border width, style, and color */
     margin: 5px; /* outer padding */
 	cursor: pointer; /* change cursor to hand on hover */
+	border-radius: 8px;
 }
+
+.leaflet-popup-tip {
+    background: rgba(0, 0, 0, 0) !important;
+    box-shadow: none !important;
+}
+
+/* change button color when hovering*/
+.sidebar-item:hover {
+	background:#A1AD6F
+}
+/* make button click*/
+.sidebar-item:active {
+	background:#A1AD6F;
+	transform: translateY(4px);
+  }
