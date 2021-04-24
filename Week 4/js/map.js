@@ -58,7 +58,7 @@ function mapCSV(data){
 		markers.addLayer(marker)
 
 		//fly to location and show/hide paragraph when clicked
-		$('.sidebar').append(`<div class="sidebar-item" onclick="ShowAndHide(${index});flyToIndex(${index});"><h2>${item.title}</h2><h3>${item.date}</h3></div>`)
+		$('.sidebar').append(`<div class="sidebar-item" onclick="ShowAndHide(${index});flyToIndex(${index});">${item.title} <br><i>(${item.date})</i></div>`)
 		//add paragraph div to sidebar
 		$('.sidebar').append(`<div id = "${index}" style="display: none">${item.description}<br><center><img src="${item.reference_url}"></center><br>${item.caption}</div>`)
 	})

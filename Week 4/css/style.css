@@ -26,26 +26,26 @@ body {
 	background-color: #2F3020;
 	color: white;
 	font-size: 2em;
-	font-family: "Garamond", serif;
 }
 
 .sidebar {
 	color: white;
 	grid-area: sidebar;
-	padding:30px;
+	padding:20px;
 	background-color: #596235;
 	overflow: auto;
-	
+	padding-top: 2px;
 }
 
 .sidebar-item {
-	font-family: "Garamond", serif;
-	padding: 12px;
-	margin: 5px;
+	font-family:"Garamond", serif;
+	padding: 8px;
+	margin: 10px;
 	cursor: pointer; /* change cursor to hand on hover */
 	text-align: center;
 	background-color:#2F3020;
 	border-radius: 13px;
+	font-size:larger;
 }
 
 .content {
@@ -56,6 +56,7 @@ body {
 	grid-area: footer;
 	padding:10px;
 	background-color:#2F3020;
+	color: white;
 }
 
 img {  
