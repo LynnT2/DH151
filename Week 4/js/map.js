@@ -3,7 +3,7 @@ let map;
 let lat = 0;
 let lon = 0;
 let zl = 3;
-let path = "data/dunitz.csv"; // path to csv data
+let path = "data/historyasianam.csv"; // path to csv data
 let markers = L.featureGroup(); // global variables
 
 // initialize
@@ -39,7 +39,7 @@ function mapCSV(data){
 	
 	// circle options
 	let circleOptions = {
-		radius: 5,
+		radius: 10,
 		weight: 1,
 		color: 'white',
 		fillColor: 'dodgerblue',
@@ -50,13 +50,37 @@ function mapCSV(data){
 	data.data.forEach(function(item,index){
 		let marker = L.circleMarker([item.latitude,item.longitude],circleOptions) // create marker
 		.on('mouseover',function(){
-			this.bindPopup(`${item.title}<br><img src="${item.thumbnail_url}">`).openPopup()
+			this.bindPopup("<h3>" + item.title + " (" + item.date + ")" + "</h3>" + "<center><img src ='" + item.reference_url + "'width=100%'/></center>" +
+			item.description).openPopup()
 		})
 		// add marker to featuregroup		
 		markers.addLayer(marker)
+
+		//fly to location and show/hide paragraph when clicked
+		$('.sidebar').append(`<div class="sidebar-item" onclick="ShowAndHide(${index});flyToIndex(${index});"><h2>${item.title}</h2><h3>${item.date}</h3></div>`)
+		//add paragraph div to sidebar
+		$('.sidebar').append(`<div id = "${index}" style="display: none">${item.description}<br><center><img src="${item.reference_url}"></center><br>${item.caption}</div>`)
 	})
 
 	markers.addTo(map); // add featuregroup to map
 
 	map.fitBounds(markers.getBounds()); // fit markers to map
+}
+
+//show and hide paragraph 
+function ShowAndHide(index) {
+    var x = document.getElementById(index);
+    if (x.style.display == 'none') {
+        x.style.display = 'block';
+    } else {
+        x.style.display = 'none';
+    }
+}
+
+function flyToIndex(index){
+	// zoom to level 12 first
+	map.setZoom(12);
+	// pan to the marker
+	map.flyTo(markers.getLayers()[index]._latlng);
+	markers.getLayers()[index].openPopup();
 }
