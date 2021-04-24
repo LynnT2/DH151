@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../FantasticFour"
+		},
+		{
+			"path": ".."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "DH151"
+	}
+}

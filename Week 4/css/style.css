@@ -2,6 +2,8 @@ body,html {
 	margin:0;
 	height:100%;
 	width:100%;
+	font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	font-size: 100%;
 }
 
 #map {
@@ -10,8 +12,8 @@ body,html {
 
 body {
 	display: grid;
-	grid-template-rows: 80px 1fr 50px;
-	grid-template-columns: 50% 50%;
+	grid-template-rows: 80px 1fr 40px;
+	grid-template-columns: 30% 70%;
 	grid-template-areas: 
 	"header header"
 	"sidebar content"
@@ -20,18 +22,30 @@ body {
 
 .header {
 	grid-area: header;
-	padding:10px;
-	background-color: #333;
+	padding:20px;
+	background-color: #2F3020;
 	color: white;
 	font-size: 2em;
+	font-family: "Garamond", serif;
 }
 
 .sidebar {
 	color: white;
 	grid-area: sidebar;
-	padding:10px;
-	background-color: #555;
+	padding:50px;
+	background-color: #596235;
 	overflow: auto;
+	
+}
+
+.sidebar-item {
+	font-family: "Garamond", serif;
+	padding: 12px;
+	margin: 5px;
+	cursor: pointer; /* change cursor to hand on hover */
+	text-align: center;
+	background-color:#2F3020;
+	border-radius: 13px;
 }
 
 .content {
@@ -43,3 +57,7 @@ body {
 	padding:10px;
 	background-color: rgb(175, 175, 175);
 }
+
+img {  
+	max-width: 75%;    
+	}  
