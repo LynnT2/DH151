@@ -21,6 +21,7 @@ function createMap(lat,lon,zl){
 	}).addTo(map);
 }
 
+
 // function to read csv data
 function readCSV(path){
 	Papa.parse(path, {
@@ -77,10 +78,3 @@ function ShowAndHide(index) {
     }
 }
 
-function flyToIndex(index){
-	// zoom to level 12 first
-	map.setZoom(12);
-	// pan to the marker
-	map.flyTo(markers.getLayers()[index]._latlng);
-	markers.getLayers()[index].openPopup();
-}
